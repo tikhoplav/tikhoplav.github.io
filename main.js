@@ -23,18 +23,6 @@ void main() {
     xScale = targetRatio / screenRatio;
   }
 
-  // if (targetRatio > screenRatio) {
-  //   yScale = screenRatio / targetRatio;
-  // } else {
-  //   xScale = targetRatio / screenRatio;
-  // }
-
-  // if (uResolution.x < uTarget.x) {
-  //   gl_Position = vec4(aPosition.x / targetRatio, aPosition,y, 0, 1);
-  // } else {
-  //   if (uResolution)
-  // }
-
   gl_Position = vec4(aPosition.x * xScale, aPosition.y * yScale, 0, 1);
 
   vTexCoord = aTexCoord;
