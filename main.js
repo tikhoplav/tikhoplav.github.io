@@ -18,7 +18,7 @@ void main() {
   float xScale = 1.0;
   float yScale = screenRatio / targetRatio;
 
-  if (uResolution.x < uTarget.x) {
+  if (uResolution.x < 900.0) {
     yScale = 1.0;
     xScale = targetRatio / screenRatio;
   }
@@ -40,10 +40,10 @@ in vec2 vTexCoord;
 out vec4 fragColor;
 
 void main() {
-  vec4 nCol = texture(uRipple, 1.6 * vTexCoord + time * 0.0001 * vec2(0.02, -1.0));
+  vec4 nCol = texture(uRipple, 1.6 * vTexCoord + time * 0.0001 * vec2(0.01, -0.2));
   vec4 n = normalize(2.0 * nCol - 1.0);
 
-  vec2 displaced = vTexCoord + vec2(n.r - .1 * n.b, n.g - 0.5 * n.b) * 0.016;
+  vec2 displaced = vTexCoord + vec2(n.r - .1 * n.b, n.g - 0.5 * n.b) * 0.02;
 
   fragColor = texture(uImage, displaced);
 }`;
@@ -67,7 +67,7 @@ void main() {
 
   await new Promise(resolve => {
     const img = new Image()
-    img.src = '/bg.png'
+    img.src = '/bg.jpg'
     img.onload = () => {
       gl.bindTexture(gl.TEXTURE_2D, bg)
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img)
