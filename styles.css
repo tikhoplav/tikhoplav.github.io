@@ -14,4 +14,9 @@ canvas {
   :root body {
     --chakra-colors-chakra-body-text: #333;
   }
+
+  .noprint {
+    display: none !important;
+    visibility: hidden;
+  }
 }
