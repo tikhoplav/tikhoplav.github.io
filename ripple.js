@@ -57,7 +57,7 @@ void main() {
 
   await new Promise(resolve => {
     const img = new Image()
-    img.src = '/ripple.jpg'
+    img.src = '/ripple.webp'
     img.onload = () => {
       gl.bindTexture(gl.TEXTURE_2D, ripple)
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img)
@@ -67,7 +67,7 @@ void main() {
 
   await new Promise(resolve => {
     const img = new Image()
-    img.src = '/bg.jpg'
+    img.src = '/bg.webp'
     img.onload = () => {
       gl.bindTexture(gl.TEXTURE_2D, bg)
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img)
